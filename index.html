@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Digital Clock</title>
     <style>
-        body{
+        body {
             background-color: black;
         }
-        .clock{
+
+        .clock {
             position: absolute;
             color: lime;
             top: 50%;
@@ -19,6 +21,14 @@
             font-size: 60px;
             font-family: Orbitron;
             letter-spacing: 7px;
+        }
+
+        @media screen and (max-width:800px) {
+            .clock {
+                text-align: center;
+                width: 400px;
+                font-size: 50px;
+            }
         }
     </style>
 </head>
@@ -42,15 +52,12 @@
                 session = "PM";
             }
 
-            h = (h < 10)? "0" + h : h;
-            m = (m < 10)? "0" + m : m;
-            s = (s < 10)? "0" + s : s;
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+            s = (s < 10) ? "0" + s : s;
 
             document.getElementById("digitalclock").innerHTML = h + ":" + m + ":" + s + " " + session;
-
             setTimeout(showTime, 1000)
-
-
         }
         showTime(); 
     </script>
